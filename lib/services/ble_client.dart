@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
-/// Wraps a single connected BluetoothDevice for ReefFlow control
-class ReefFlowBleClient {
+/// Wraps a single connected BluetoothDevice for PumpController control
+class PumpControllerBleClient {
   final BluetoothDevice device;
   late String _uid;
   late BluetoothCharacteristic _cmdChar; // 6E400002-B5A3-F393-E0A9-E50E24DCCA9E
@@ -12,13 +12,13 @@ class ReefFlowBleClient {
   StreamSubscription? _notifySubscription;
   final _responseController = StreamController<String>.broadcast();
 
-  // UUIDs for ReefFlow service and characteristics
+  // UUIDs for PumpController service and characteristics
   static const serviceUuid = '6e400001-b5a3-f393-e0a9-e50e24dcca9e';
   static const cmdCharUuid = '6e400002-b5a3-f393-e0a9-e50e24dcca9e';
   static const respCharUuid = '6e400003-b5a3-f393-e0a9-e50e24dcca9e';
   static const uidCharUuid = '6e400004-b5a3-f393-e0a9-e50e24dcca9e';
 
-  ReefFlowBleClient(this.device);
+  PumpControllerBleClient(this.device);
 
   String get uid => _uid;
   Stream<String> get onNotify => _responseController.stream;
@@ -42,7 +42,7 @@ class ReefFlowBleClient {
 
     final reefService = services.firstWhere(
       (s) => s.uuid.toString().toLowerCase() == serviceUuid,
-      orElse: () => throw Exception('ReefFlow service not found'),
+      orElse: () => throw Exception('PumpController service not found'),
     );
 
     // Find characteristics

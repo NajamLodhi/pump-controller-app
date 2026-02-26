@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('ReefFlow WaveMaker'),
+        title: const Text('PumpController WaveMaker'),
         centerTitle: true,
       ),
       body: Center(

@@ -1,8 +1,8 @@
 #!/bin/bash
-# ReefFlow WaveMaker App - Verification Script
+# PumpController WaveMaker App - Verification Script
 
 echo "╔════════════════════════════════════════════════════════════╗"
-echo "║  ReefFlow WaveMaker Flutter App - Verification            ║"
+echo "║  PumpController WaveMaker Flutter App - Verification            ║"
 echo "╚════════════════════════════════════════════════════════════╝"
 echo ""
 

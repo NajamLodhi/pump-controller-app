@@ -1,4 +1,4 @@
-package com.example.reefflow_mobile_app
+package com.example.pump_controller_app
 
 import io.flutter.embedding.android.FlutterActivity
 

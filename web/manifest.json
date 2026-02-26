@@ -1,6 +1,6 @@
 {
-    "name": "reefflow_mobile_app",
-    "short_name": "reefflow_mobile_app",
+    "name": "pump_controller_app",
+    "short_name": "pump_controller_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,11 +1,11 @@
-# ReefFlow WaveMaker Mobile App
+# PumpController WaveMaker Mobile App
 
-Flutter app for controlling ReefFlow wave maker devices over:
+Flutter app for controlling PumpController wave maker devices over:
 - Bluetooth Low Energy (BLE)
 - Wi-Fi / UDP (local network)
 
 ## Features
-- Discover ReefFlow devices over BLE
+- Discover PumpController devices over BLE
 - Connect to one or more BLE devices and control them together
 - Set wave mode (`Sine`, `Pulse`, `Constant`)
 - Set speed (`0-100`)
@@ -42,7 +42,7 @@ lib/
 ```
 
 ## Communication Protocol
-The app sends plaintext commands used by ReefFlow firmware:
+The app sends plaintext commands used by PumpController firmware:
 - `01 <mode>`: wave mode (`0=Sine`, `1=Pulse`, `2=Constant`)
 - `05 <speed>`: speed (`0-100`)
 - `02 <minutes>`: feed mode (`2`, `5`, `0` to cancel)
@@ -56,7 +56,7 @@ Expected BLE notifications include:
 ## Prerequisites
 - Flutter SDK installed and available in PATH
 - Android Studio / Xcode toolchain configured (depending on target platform)
-- ReefFlow devices powered on and in range
+- PumpController devices powered on and in range
 - For UDP control: phone and devices on same Wi-Fi subnet
 
 ## Setup
@@ -92,7 +92,7 @@ flutter build ios --release
    - `Control via Wi-Fi (Router)`
 
 ### BLE Flow
-1. Scan and select ReefFlow devices.
+1. Scan and select PumpController devices.
 2. Connect to one or more devices.
 3. Open control screen and send wave/speed/feed commands.
 4. Optional: open **Setup Wi-Fi** to provision network credentials.

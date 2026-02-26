@@ -18,7 +18,7 @@
         android:name="android.hardware.bluetooth_le"
         android:required="true" />
     <application
-        android:label="reefflow_mobile_app"
+        android:label="pump_controller_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

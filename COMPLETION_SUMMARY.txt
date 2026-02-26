@@ -1,4 +1,4 @@
-REEFFLOW WAVEMAKER MOBILE APP - DELIVERY SUMMARY
+PUMP_CONTROLLER WAVEMAKER MOBILE APP - DELIVERY SUMMARY
 ================================================
 
 ✓ PROJECT COMPLETE AND READY FOR TESTING
@@ -14,7 +14,7 @@ Core Components Implemented:
   3. 3 Services (BLE client, UDP client, device registry)
 
 BLE Features:
-  ✓ Scan for ReefFlow_* devices
+  ✓ Scan for PumpController_* devices
   ✓ Connect multiple devices
   ✓ Send wave mode (01), speed (05), feed (02) commands
   ✓ Read UID characteristic
@@ -40,7 +40,7 @@ Documentation Provided:
   5. BUILD_STATUS.txt - Build verification
 
 Quick Start:
-  $ cd reefflow_mobile_app
+  $ cd pump_controller_app
   $ flutter pub get
   $ flutter run
 
@@ -51,7 +51,7 @@ All protocol UUIDs correctly configured:
   • UID: 6E400004-B5A3-F393-E0A9-E50E24DCCA9E
 
 Next Steps:
-  1. Connect to physical ReefFlow device
+  1. Connect to physical PumpController device
   2. Test BLE scan and control flows
   3. Test Wi-Fi provisioning
   4. Test UDP discovery and control

@@ -3,7 +3,7 @@ import '../../services/ble_client.dart';
 import '../../services/device_registry.dart';
 
 class WiFiProvisionScreen extends StatefulWidget {
-  final ReefFlowBleClient client;
+  final PumpControllerBleClient client;
 
   const WiFiProvisionScreen({Key? key, required this.client}) : super(key: key);
 

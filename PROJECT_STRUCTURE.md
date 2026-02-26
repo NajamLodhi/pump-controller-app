@@ -1,4 +1,4 @@
-# ReefFlow WaveMaker App - Project Structure
+# PumpController WaveMaker App - Project Structure
 
 ## Directory Layout
 
@@ -47,7 +47,7 @@ pubspec.yaml                          # Flutter dependencies and configuration
 - Entry point for app navigation
 
 ### lib/screens/ble/scan_screen_ble.dart
-- Scans for `ReefFlow_*` BLE devices
+- Scans for `PumpController_*` BLE devices
 - Displays device name, MAC ID, RSSI
 - Shows connection state (Disconnected/Connecting/Connected)
 - Multi-select by tapping rows
@@ -125,7 +125,7 @@ pubspec.yaml                          # Flutter dependencies and configuration
 ```
 HomeScreen
     ↓ (tap Bluetooth)
-ScanScreenBLE (scans for ReefFlow_*)
+ScanScreenBLE (scans for PumpController_*)
     ↓ (select device(s))
 ControlScreenBLE (send 01/02/05 commands)
     ├─→ (optional) WiFiProvisionScreen (10/11 commands)
@@ -145,7 +145,7 @@ ControlScreenUDP (send 01/02/05 commands to port 8888)
 ## State Management
 
 - **Per-screen**: StatefulWidget with setState() for UI updates
-- **BLE connections**: Map of deviceId → ReefFlowBleClient
+- **BLE connections**: Map of deviceId → PumpControllerBleClient
 - **UDP discoveries**: Map of uid → UdpDevice
 - **Selection state**: Map of deviceId/uid → isSelected boolean
 - **Persistent**: DeviceRegistry with SharedPreferences backend

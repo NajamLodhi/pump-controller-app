@@ -3,7 +3,7 @@ import '../../services/ble_client.dart';
 import 'wifi_provision_screen.dart';
 
 class ControlScreenBLE extends StatefulWidget {
-  final List<ReefFlowBleClient> clients;
+  final List<PumpControllerBleClient> clients;
 
   const ControlScreenBLE({Key? key, required this.clients}) : super(key: key);
 
@@ -24,7 +24,7 @@ class _ControlScreenBLEState extends State<ControlScreenBLE> {
     super.dispose();
   }
 
-  Future<void> _sendToAll(Future<void> Function(ReefFlowBleClient) action) async {
+  Future<void> _sendToAll(Future<void> Function(PumpControllerBleClient) action) async {
     setState(() => _isSending = true);
     try {
       for (final client in widget.clients) {

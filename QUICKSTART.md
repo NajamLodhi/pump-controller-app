@@ -1,4 +1,4 @@
-# Quick Start Guide - ReefFlow WaveMaker Mobile App
+# Quick Start Guide - PumpController WaveMaker Mobile App
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@
 
 ### 1. Clone/Setup the Project
 ```bash
-cd /path/to/reefflow_mobile_app
+cd /path/to/pump_controller_app
 ```
 
 ### 2. Install Dependencies
@@ -79,8 +79,8 @@ The app will prompt for:
    
 2. **Scan for Devices**
    - ScanScreenBLE opens and automatically scans
-   - Wait ~10 seconds for nearby `ReefFlow_*` devices to appear
-   - Device appears as: `ReefFlow_<UID>` (MAC address shown)
+   - Wait ~10 seconds for nearby `PumpController_*` devices to appear
+   - Device appears as: `PumpController_<UID>` (MAC address shown)
    
 3. **Connect to Devices**
    - Tap device row to connect (shows spinner while connecting)
@@ -109,7 +109,7 @@ The app will prompt for:
 ### UDP Control (Device on Wi-Fi)
 
 1. **Start UDP Flow**
-   - Make sure ReefFlow device is already connected to your Wi-Fi
+   - Make sure PumpController device is already connected to your Wi-Fi
    - Tap "Control via Wi-Fi (Router)" on home screen
    
 2. **Wait for Discovery**
@@ -159,11 +159,11 @@ flutter run -v
 
 ## Troubleshooting
 
-### "No ReefFlow devices found"
+### "No PumpController devices found"
 
 **BLE Issue:**
 1. Ensure device is powered on and advertising
-2. Check if device name starts with `ReefFlow_`
+2. Check if device name starts with `PumpController_`
 3. Try manual rescan (tap "Scan Again" button)
 4. Verify Bluetooth is enabled on phone
 5. On Android: Grant location permission (required for BLE scan)
@@ -191,11 +191,11 @@ flutter run -v
 
 On Android:
 ```bash
-adb shell pm grant com.example.reefflow_mobile_app \
+adb shell pm grant com.example.pump_controller_app \
   android.permission.BLUETOOTH_SCAN
-adb shell pm grant com.example.reefflow_mobile_app \
+adb shell pm grant com.example.pump_controller_app \
   android.permission.BLUETOOTH_CONNECT
-adb shell pm grant com.example.reefflow_mobile_app \
+adb shell pm grant com.example.pump_controller_app \
   android.permission.ACCESS_FINE_LOCATION
 ```
 
@@ -257,7 +257,7 @@ nc -u 192.168.1.100 8888
 
 ## Next Steps
 
-1. **Test with physical ReefFlow device**
+1. **Test with physical PumpController device**
 2. **Verify BLE commands are received** (check device firmware logs)
 3. **Verify UDP commands are received** (check device firmware logs)
 4. **Test multi-device scenarios** (3+ devices simultaneously)

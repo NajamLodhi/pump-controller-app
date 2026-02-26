@@ -1,8 +1,8 @@
-# ReefFlow WaveMaker Mobile App - Complete Delivery
+# PumpController WaveMaker Mobile App - Complete Delivery
 
 ## Overview
 
-✅ **FULLY IMPLEMENTED** Flutter application for controlling the ReefFlow WaveMaker (ESP32) device via:
+✅ **FULLY IMPLEMENTED** Flutter application for controlling the PumpController WaveMaker (ESP32) device via:
 - **Bluetooth (BLE)** - Direct device control + Wi-Fi provisioning
 - **Wi-Fi (UDP)** - Router-based network control
 
@@ -13,7 +13,7 @@
 ## Quick Start
 
 ```bash
-cd /path/to/reefflow_mobile_app
+cd /path/to/pump_controller_app
 
 # Install dependencies
 flutter pub get
@@ -95,7 +95,7 @@ flutter run -d <device_id>
 ## Features Implemented
 
 ### BLE Control Flow ✅
-- [x] Scan for nearby devices (name prefix: `ReefFlow_`)
+- [x] Scan for nearby devices (name prefix: `PumpController_`)
 - [x] Multi-device connect/disconnect
 - [x] Wave mode selection (Sine/Pulse/Constant)
 - [x] Speed slider (0-100%)
@@ -238,7 +238,7 @@ All packages are:
 Before deployment, verify:
 
 **BLE Flow:**
-- [ ] App scans for devices with name prefix `ReefFlow_`
+- [ ] App scans for devices with name prefix `PumpController_`
 - [ ] Can connect to single device
 - [ ] Can connect to multiple devices simultaneously
 - [ ] Wave mode commands send successfully (01)
@@ -272,7 +272,7 @@ Before deployment, verify:
 
 1. ✅ **Code Complete** - All source files implemented
 2. ✅ **Configuration Complete** - Android & iOS permissions set
-3. → **Hardware Testing** - Connect to physical ReefFlow device
+3. → **Hardware Testing** - Connect to physical PumpController device
 4. → **Functionality Testing** - Verify all flows work
 5. → **Build for Distribution** - Create APK/IPA
 6. → **Deploy** - Publish to app stores
@@ -295,7 +295,7 @@ Before deployment, verify:
 
 ### Common Issues
 
-**"No ReefFlow devices found"**
+**"No PumpController devices found"**
 - Ensure device is powered on
 - Check Bluetooth is enabled on phone
 - Grant location permission (required for BLE scan)
@@ -333,7 +333,7 @@ Before deployment, verify:
 
 ## Summary
 
-**ReefFlow WaveMaker Flutter app is fully implemented, configured, and ready for testing with physical hardware.** All code is production-ready with zero compilation errors and comprehensive documentation.
+**PumpController WaveMaker Flutter app is fully implemented, configured, and ready for testing with physical hardware.** All code is production-ready with zero compilation errors and comprehensive documentation.
 
 **Estimated time to verify functionality**: 2-4 hours with physical device
 

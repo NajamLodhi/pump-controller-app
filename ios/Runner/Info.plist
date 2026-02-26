@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>Reefflow Mobile App</string>
+	<string>PumpController Mobile App</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>reefflow_mobile_app</string>
+	<string>pump_controller_app</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -47,15 +47,15 @@
 	<true/>
 	<!-- Bluetooth permissions -->
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>This app needs access to Bluetooth to connect to ReefFlow WaveMaker devices.</string>
+	<string>This app needs access to Bluetooth to connect to PumpController WaveMaker devices.</string>
 	<key>NSBluetoothCentralUsageDescription</key>
-	<string>This app needs access to Bluetooth to scan and control ReefFlow WaveMaker devices.</string>
+	<string>This app needs access to Bluetooth to scan and control PumpController WaveMaker devices.</string>
 	<!-- Local network permissions (for UDP) -->
 	<key>NSLocalNetworkUsageDescription</key>
-	<string>This app needs access to the local network to control ReefFlow WaveMaker devices via Wi-Fi.</string>
+	<string>This app needs access to the local network to control PumpController WaveMaker devices via Wi-Fi.</string>
 	<key>NSBonjourServices</key>
 	<array>
-		<string>_reefflow._udp</string>
+		<string>_pump_controller._udp</string>
 	</array>
 </dict>
 </plist>

@@ -1,11 +1,11 @@
-# ReefFlow WaveMaker Mobile App
+# PumpController WaveMaker Mobile App
 
-A Flutter application for controlling the ReefFlow WaveMaker (ESP32) device via Bluetooth (BLE) and Wi-Fi (UDP).
+A Flutter application for controlling the PumpController WaveMaker (ESP32) device via Bluetooth (BLE) and Wi-Fi (UDP).
 
 ## Features
 
 ### BLE Control Flow
-- **Scan & Connect**: Automatically discovers nearby ReefFlow devices (device names starting with `ReefFlow_`)
+- **Scan & Connect**: Automatically discovers nearby PumpController devices (device names starting with `PumpController_`)
 - **Multi-device Support**: Connect and control multiple devices simultaneously via BLE
 - **Live Control**: Adjust wave mode, speed, and feed settings in real-time
 - **Wi-Fi Provisioning**: Optional BLE-based Wi-Fi onboarding to enable UDP control
@@ -24,7 +24,7 @@ A Flutter application for controlling the ReefFlow WaveMaker (ESP32) device via 
 
 ### Services Layer
 
-#### `ReefFlowBleClient` (ble_client.dart)
+#### `PumpControllerBleClient` (ble_client.dart)
 Wraps individual BLE device connections with:
 - Service discovery and characteristic caching
 - UID reading from device
@@ -38,7 +38,7 @@ Wraps individual BLE device connections with:
 - Response RX: `6E400003-B5A3-F393-E0A9-E50E24DCCA9E`
 - UID Read: `6E400004-B5A3-F393-E0A9-E50E24DCCA9E`
 
-#### `ReefFlowUdpClient` (udp_client.dart)
+#### `PumpControllerUdpClient` (udp_client.dart)
 Handles UDP communication with:
 - Broadcast listening on port 8888
 - Discovery message parsing (`UID:<uid>,IP:<ip>`)
@@ -60,7 +60,7 @@ Entry point with two big buttons:
 - "Control via Wi-Fi (Router)"
 
 #### BLE Flow
-1. **ScanScreenBLE**: Displays nearby `ReefFlow_*` devices
+1. **ScanScreenBLE**: Displays nearby `PumpController_*` devices
    - Shows device name, MAC address, and RSSI
    - Connection state per row (Disconnected/Connecting/Connected)
    - Multi-select capability via tapping rows
@@ -134,17 +134,17 @@ Both BLE and UDP use the same ASCII command format:
 ### iOS (Runner/Info.plist)
 ```xml
 <key>NSBluetoothCentralUsageDescription</key>
-<string>This app needs access to Bluetooth to scan and control ReefFlow WaveMaker devices.</string>
+<string>This app needs access to Bluetooth to scan and control PumpController WaveMaker devices.</string>
 
 <key>NSBluetoothPeripheralUsageDescription</key>
-<string>This app needs access to Bluetooth to connect to ReefFlow WaveMaker devices.</string>
+<string>This app needs access to Bluetooth to connect to PumpController WaveMaker devices.</string>
 
 <key>NSLocalNetworkUsageDescription</key>
-<string>This app needs access to the local network to control ReefFlow WaveMaker devices via Wi-Fi.</string>
+<string>This app needs access to the local network to control PumpController WaveMaker devices via Wi-Fi.</string>
 
 <key>NSBonjourServices</key>
 <array>
-    <string>_reefflow._udp</string>
+    <string>_pump_controller._udp</string>
 </array>
 ```
 
@@ -213,7 +213,7 @@ flutter build ios
 
 ## Testing Checklist
 
-- [ ] BLE scan finds devices named `ReefFlow_*`
+- [ ] BLE scan finds devices named `PumpController_*`
 - [ ] Can connect to single device and see UID
 - [ ] Wave mode commands (01 x) send successfully
 - [ ] Speed slider (05 x) sends 0-100
@@ -244,8 +244,8 @@ flutter build ios
 
 ## License
 
-Proprietary – ReefFlow, Inc.
+Proprietary – PumpController, Inc.
 
 ## Support
 
-For issues or feature requests, contact the ReefFlow development team.
+For issues or feature requests, contact the PumpController development team.

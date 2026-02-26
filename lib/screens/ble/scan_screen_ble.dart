@@ -14,7 +14,7 @@ class ScanScreenBLE extends StatefulWidget {
 class _ScanScreenBLEState extends State<ScanScreenBLE> {
   final Map<String, BluetoothDevice> _devices = {};
   final Map<String, bool> _selectedDevices = {};
-  final Map<String, ReefFlowBleClient> _connectedClients = {};
+  final Map<String, PumpControllerBleClient> _connectedClients = {};
   bool _isScanning = false;
   bool _isConnecting = false;
   StreamSubscription? _scanResultsSubscription;
@@ -40,7 +40,7 @@ class _ScanScreenBLEState extends State<ScanScreenBLE> {
     print('[BLE SCAN] Starting scan without service UUID filter...');
     setState(() => _isScanning = true);
     
-    // Scan all devices - don't filter by service UUID as ReefFlow may not advertise it
+    // Scan all devices - don't filter by service UUID as PumpController may not advertise it
     FlutterBluePlus.startScan(
       timeout: const Duration(seconds: 15),
     );
@@ -63,13 +63,13 @@ class _ScanScreenBLEState extends State<ScanScreenBLE> {
         
         print('[BLE SCAN] Device detected: "$displayName" | MAC: ${result.device.remoteId.str} | RSSI: $rssi | UUIDs: $serviceUuids');
         
-        // Check if this is a ReefFlow device
-        final isReefFlow = displayName.startsWith('ReefFlow_') || 
-                          displayName.contains('ReefFlow') ||
+        // Check if this is a PumpController device
+        final isPumpController = displayName.startsWith('PumpController_') || 
+                          displayName.contains('PumpController') ||
                           serviceUuids.any((uuid) => uuid.str.toLowerCase().contains('6e400001'));
         
-        if (isReefFlow) {
-          print('[BLE SCAN] ✓ FOUND ReefFlow device: $displayName');
+        if (isPumpController) {
+          print('[BLE SCAN] ✓ FOUND PumpController device: $displayName');
           setState(() {
             _devices[result.device.remoteId.str] = result.device;
             _selectedDevices.putIfAbsent(result.device.remoteId.str, () => false);
@@ -116,7 +116,7 @@ class _ScanScreenBLEState extends State<ScanScreenBLE> {
         setState(() => _isConnecting = true);
         _stopScan(); // Stop scan before connecting
 
-        final client = ReefFlowBleClient(device);
+        final client = PumpControllerBleClient(device);
         await client.connect();
 
         setState(() {
@@ -184,7 +184,7 @@ class _ScanScreenBLEState extends State<ScanScreenBLE> {
                 children: [
                   const Icon(Icons.bluetooth_disabled, size: 48),
                   const SizedBox(height: 16),
-                  const Text('No ReefFlow devices found'),
+                  const Text('No PumpController devices found'),
                   const SizedBox(height: 16),
                   ElevatedButton(
                     onPressed: _isConnecting ? null : _startScan,

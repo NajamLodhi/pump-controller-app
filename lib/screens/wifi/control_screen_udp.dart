@@ -4,7 +4,7 @@ import '../../services/udp_client.dart';
 
 class ControlScreenUDP extends StatefulWidget {
   final List<String> deviceIps;
-  final ReefFlowUdpClient udpClient;
+  final PumpControllerUdpClient udpClient;
 
   const ControlScreenUDP({
     Key? key,

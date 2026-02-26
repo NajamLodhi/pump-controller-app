@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:io';
 
-/// Client for UDP communication with ReefFlow devices
-class ReefFlowUdpClient {
+/// Client for UDP communication with PumpController devices
+class PumpControllerUdpClient {
   late RawDatagramSocket _socket;
   final _discoveryController = StreamController<UdpDevice>.broadcast();
   final int port = 8888;

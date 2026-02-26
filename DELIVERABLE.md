@@ -1,8 +1,8 @@
-# ReefFlow WaveMaker Mobile App - Deliverable Summary
+# PumpController WaveMaker Mobile App - Deliverable Summary
 
 ## Project Overview
 
-A complete Flutter mobile application (Android + iOS) for controlling the ReefFlow WaveMaker (ESP32) device via both Bluetooth (BLE) and Wi-Fi (UDP). The app implements the exact firmware protocol with full support for multi-device control, Wi-Fi provisioning, and network discovery.
+A complete Flutter mobile application (Android + iOS) for controlling the PumpController WaveMaker (ESP32) device via both Bluetooth (BLE) and Wi-Fi (UDP). The app implements the exact firmware protocol with full support for multi-device control, Wi-Fi provisioning, and network discovery.
 
 ## What Was Built
 
@@ -27,8 +27,8 @@ A complete Flutter mobile application (Android + iOS) for controlling the ReefFl
 6. **ControlScreenUDP** – UDP device control interface
 
 ### Services Implemented ✅
-1. **ReefFlowBleClient** – Single device BLE wrapper with notification handling
-2. **ReefFlowUdpClient** – UDP broadcast listening and command sending
+1. **PumpControllerBleClient** – Single device BLE wrapper with notification handling
+2. **PumpControllerUdpClient** – UDP broadcast listening and command sending
 3. **DeviceRegistry** – Persistent device storage (SharedPreferences)
 
 ### Permissions Configured ✅
@@ -134,7 +134,7 @@ provider: ^6.0.0                # (optional) State management
 
 The implementation satisfies all acceptance criteria:
 
-- [x] BLE scan finds devices advertising `ReefFlow_<UID>`
+- [x] BLE scan finds devices advertising `PumpController_<UID>`
 - [x] User can connect to 1 device and control via BLE commands
 - [x] User can connect to multiple devices and broadcast commands
 - [x] Wi-Fi provisioning works: `10 SCAN` → SSID list
@@ -217,7 +217,7 @@ flutter build ios --release        # iOS (for Xcode archiving)
 ## Next Steps for User
 
 1. **Immediate**: Run `flutter pub get` and `flutter analyze` to verify setup
-2. **Testing**: Connect to physical ReefFlow device and test both BLE and UDP flows
+2. **Testing**: Connect to physical PumpController device and test both BLE and UDP flows
 3. **Customization**: Adjust UI colors, add app icon, customize app name
 4. **Distribution**: Sign app and publish to App Store / Play Store
 5. **Enhancement**: Add device grouping, scheduling, firmware OTA updates
@@ -253,4 +253,4 @@ flutter build ios --release        # iOS (for Xcode archiving)
 
 ---
 
-**The app is complete and ready for testing with the ReefFlow WaveMaker hardware!** 🎉
+**The app is complete and ready for testing with the PumpController WaveMaker hardware!** 🎉

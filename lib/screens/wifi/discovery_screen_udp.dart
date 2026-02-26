@@ -10,7 +10,7 @@ class DiscoveryScreenUDP extends StatefulWidget {
 }
 
 class _DiscoveryScreenUDPState extends State<DiscoveryScreenUDP> {
-  final _udpClient = ReefFlowUdpClient();
+  final _udpClient = PumpControllerUdpClient();
   final Map<String, UdpDevice> _devices = {};
   final Map<String, bool> _selectedDevices = {};
   bool _isListening = false;
@@ -111,7 +111,7 @@ class _DiscoveryScreenUDPState extends State<DiscoveryScreenUDP> {
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    'Make sure ReefFlow devices are connected to Wi-Fi',
+                    'Make sure PumpController devices are connected to Wi-Fi',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 12, color: Colors.grey),
                   ),
